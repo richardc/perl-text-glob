@@ -1,0 +1,5 @@
+Changes
+MANIFEST
+Glob.pm
+Makefile.PL
+t/Text-Glob.t
