@@ -1,5 +1,6 @@
 0.06    Monday 1st September, 2003
-	port to Module::Build
+	- port to Module::Build
+        - Nested alternations fix from Mike Benson
 	
 0.05	15th August, 2002
 	- !match_glob("*.foo", "foo/.foo"); 

@@ -1,6 +1,6 @@
 #!perl -w
 use strict;
-use Test::More tests => 37;
+use Test::More tests => 41;
 
 BEGIN { use_ok('Text::Glob', qw( glob_to_regex match_glob ) ) }
 
@@ -66,3 +66,9 @@ ok(  match_glob( 'foo$bar.*', 'foo$bar.c'), "escaping \$" );
 ok(  match_glob( 'foo^bar.*', 'foo^bar.c'), "escaping ^" );
 
 ok(  match_glob( 'foo|bar.*', 'foo|bar.c'), "escaping |" );
+
+
+ok(  match_glob( '{foo,{bar,baz}}', 'foo'), "{foo,{bar,baz}}" );
+ok(  match_glob( '{foo,{bar,baz}}', 'bar') );
+ok(  match_glob( '{foo,{bar,baz}}', 'baz') );
+ok( !match_glob( '{foo,{bar,baz}}', 'foz') );

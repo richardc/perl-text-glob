@@ -3,7 +3,7 @@ use strict;
 use Exporter;
 use vars qw/$VERSION @ISA @EXPORT_OK
             $strict_leading_dot $strict_wildcard_slash/;
-$VERSION = '0.05';
+$VERSION = '0.06';
 @ISA = 'Exporter';
 @EXPORT_OK = qw( glob_to_regex match_glob );
 
@@ -28,7 +28,7 @@ sub glob_to_regex {
             $first_byte = 1;
         }
         if ($_ eq '.' || $_ eq '(' || $_ eq ')' || $_ eq '|' ||
-            $_ eq '+' || $_ eq '^' || $_ eq '$' ) { # ' ) {
+            $_ eq '+' || $_ eq '^' || $_ eq '$' ) {
             $regex .= "\\$_";
         }
         elsif ($_ eq '*') {
@@ -41,11 +41,11 @@ sub glob_to_regex {
         }
         elsif ($_ eq '{') {
             $regex .= $escaping ? "\\{" : "(";
-            $in_curlies = 1 if !$escaping;
+            ++$in_curlies unless $escaping;
         }
         elsif ($_ eq '}' && $in_curlies) {
             $regex .= $escaping ? "}" : ")";
-            $in_curlies = 0 if !$escaping;
+            --$in_curlies unless $escaping;
         }
         elsif ($_ eq ',' && $in_curlies) {
             $regex .= $escaping ? "," : "|";
