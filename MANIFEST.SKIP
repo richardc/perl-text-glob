@@ -1,7 +1,10 @@
 MANIFEST.SKIP
+^Build$
+^_build/
 \.cvsignore
 CVS/
 ~$
 ^Makefile$
 blib/
 pm_to_blib
+\.svn/
