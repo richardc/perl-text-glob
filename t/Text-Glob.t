@@ -1,6 +1,6 @@
 #!perl -w
 use strict;
-use Test::More tests => 41;
+use Test::More tests => 44;
 
 BEGIN { use_ok('Text::Glob', qw( glob_to_regex match_glob ) ) }
 
@@ -72,3 +72,7 @@ ok(  match_glob( '{foo,{bar,baz}}', 'foo'), "{foo,{bar,baz}}" );
 ok(  match_glob( '{foo,{bar,baz}}', 'bar') );
 ok(  match_glob( '{foo,{bar,baz}}', 'baz') );
 ok( !match_glob( '{foo,{bar,baz}}', 'foz') );
+
+ok(  match_glob( 'foo@bar', 'foo@bar'), '@ character');
+ok(  match_glob( 'foo$bar', 'foo$bar'), '$ character');
+ok(  match_glob( 'foo%bar', 'foo%bar'), '% character');

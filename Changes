@@ -1,3 +1,8 @@
+0.07	Friday 14th July, 2006
+	Explictly quote @ and %.  Though they don't really need it to work
+	normally, it's needed for when you roundtrip the
+	regex back into text (like File::Find::Rule does).
+
 0.06    Monday 1st September, 2003
 	- port to Module::Build
         - Nested alternations fix from Mike Benson
