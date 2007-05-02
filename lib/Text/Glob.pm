@@ -3,9 +3,9 @@ use strict;
 use Exporter;
 use vars qw/$VERSION @ISA @EXPORT_OK
             $strict_leading_dot $strict_wildcard_slash/;
-$VERSION = '0.07';
+$VERSION = '0.08';
 @ISA = 'Exporter';
-@EXPORT_OK = qw( glob_to_regex match_glob );
+@EXPORT_OK = qw( glob_to_regex glob_to_regex_string match_glob );
 
 $strict_leading_dot    = 1;
 $strict_wildcard_slash = 1;
@@ -178,7 +178,7 @@ Richard Clamp <richardc@unixbeard.net>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2002 Richard Clamp.  All Rights Reserved.
+Copyright (C) 2002, 2003, 2006, 2007 Richard Clamp.  All Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

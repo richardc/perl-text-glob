@@ -1,4 +1,4 @@
-HEAD
+0.08	Wednesday 2nd May, 2007
 	Expose glob_to_regex_string (Joshua Hoblitt)
 
 0.07	Friday 14th July, 2006
