@@ -124,6 +124,11 @@ Returns the list of things which match the glob from the source list.
 Returns a compiled regex which is the equiavlent of the globbing
 pattern.
 
+=item glob_to_regex_string( $glob )
+
+Returns a regex string which is the equiavlent of the globbing
+pattern.
+
 =back
 
 =head1 SYNTAX
