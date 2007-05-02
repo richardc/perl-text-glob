@@ -14,6 +14,13 @@ use constant debug => 0;
 
 sub glob_to_regex {
     my $glob = shift;
+    my $regex = glob_to_regex_string($glob);
+    return qr/^$regex$/;
+}
+
+sub glob_to_regex_string
+{
+    my $glob = shift;
     my ($regex, $in_curlies, $escaping);
     local $_;
     my $first_byte = 1;
@@ -67,7 +74,8 @@ sub glob_to_regex {
         $escaping = 0;
     }
     print "# $glob $regex\n" if debug;
-    qr/^$regex$/;
+
+    return $regex;
 }
 
 sub match_glob {
