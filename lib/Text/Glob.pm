@@ -143,7 +143,7 @@ C<a*> matches C<a>, C<aa>, C<aaaa> and many many more.
 
 =item C<?> - match exactly one character
 
-C<a?> matches C<aa>, but not C<a>, or C<aa>
+C<a?> matches C<aa>, but not C<a>, or C<aaa>
 
 =item Character sets/ranges
 
