@@ -121,12 +121,12 @@ Returns the list of things which match the glob from the source list.
 
 =item glob_to_regex( $glob )
 
-Returns a compiled regex which is the equiavlent of the globbing
+Returns a compiled regex which is the equivalent of the globbing
 pattern.
 
 =item glob_to_regex_string( $glob )
 
-Returns a regex string which is the equiavlent of the globbing
+Returns a regex string which is the equivalent of the globbing
 pattern.
 
 =back
