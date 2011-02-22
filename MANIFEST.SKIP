@@ -2,6 +2,7 @@ MANIFEST.SKIP
 ^Build$
 ^_build/
 \.cvsignore
+\.gitignore
 CVS/
 ~$
 ^Makefile$
