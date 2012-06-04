@@ -1,5 +1,7 @@
 MANIFEST.SKIP
+MANIFEST.bak
 ^Build$
+\.git/
 ^_build/
 \.cvsignore
 \.gitignore
@@ -9,3 +11,5 @@ CVS/
 blib/
 pm_to_blib
 \.svn/
+^MYMETA\.yml$
+^MYMETA\.json$
