@@ -21,6 +21,11 @@ sub glob_to_regex {
 sub glob_to_regex_string
 {
     my $glob = shift;
+
+    my $seperator = $Text::Glob::seperator;
+    $seperator = "/" unless defined $seperator;
+    $seperator = quotemeta($seperator);
+
     my ($regex, $in_curlies, $escaping);
     local $_;
     my $first_byte = 1;
@@ -40,11 +45,11 @@ sub glob_to_regex_string
         }
         elsif ($_ eq '*') {
             $regex .= $escaping ? "\\*" :
-              $strict_wildcard_slash ? "[^/]*" : ".*";
+              $strict_wildcard_slash ? "(?:(?!$seperator).)*" : ".*";
         }
         elsif ($_ eq '?') {
             $regex .= $escaping ? "\\?" :
-              $strict_wildcard_slash ? "[^/]" : ".";
+              $strict_wildcard_slash ? "(?!$seperator)." : ".";
         }
         elsif ($_ eq '{') {
             $regex .= $escaping ? "\\{" : "(";
@@ -163,11 +168,13 @@ the leading . in the glob pattern (C<.*.foo>), or set
 C<$Text::Glob::strict_leading_dot> to a false value while compiling
 the regex.
 
-=item C<*> and C<?> do not match /
+=item C<*> and C<?> do not match the seperator (i.e. do not match C</>)
 
 C<*.foo> does not match C<bar/baz.foo>.  For this you must either
 explicitly match the / in the glob (C<*/*.foo>), or set
-C<$Text::Glob::strict_wildcard_slash> to a false value with compiling
+C<$Text::Glob::strict_wildcard_slash> to a false value while compiling
+the regex, or change the seperator that Text::Glob uses by setting
+C<$Text::Glob::seperator> to an alternative value while compiling the
 the regex.
 
 =back

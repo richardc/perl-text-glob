@@ -1,7 +1,8 @@
+Build.PL
 Changes
-MANIFEST
 lib/Text/Glob.pm
 Makefile.PL
-Build.PL
+MANIFEST
 META.yml
 t/Text-Glob.t
+t/Text-Glob_Sep.t
