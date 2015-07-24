@@ -22,6 +22,16 @@ my %WriteMakefileArgs = (
     TEST_REQUIRES => {
         'Test::More' => '0',
     },
+
+    META_MERGE => {
+        'meta-spec' => { version => 2 },
+        dynamic_config => 0,
+        resources => {
+            bugtracker => {
+                mailto => 'richardc@unixbeard.net',
+            },
+        },
+    },
 );
 
 # degrade gracefully for older EUMM/older perls
