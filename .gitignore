@@ -6,3 +6,7 @@ Build
 Makefile.PL
 META.yml
 MYMETA.*
+/Makefile
+/Makefile.old
+/MANIFEST.bak
+/MANIFEST.SKIP.bak
