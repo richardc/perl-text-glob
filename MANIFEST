@@ -2,7 +2,6 @@ Build.PL
 Changes
 lib/Text/Glob.pm
 Makefile.PL
-MANIFEST
-META.yml
+MANIFEST			This list of files
 t/Text-Glob.t
 t/Text-Glob_Sep.t
