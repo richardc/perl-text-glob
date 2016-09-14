@@ -1,4 +1,4 @@
-0.10
+0.10    Wednesday 14th September, 2016
         Added ability to alter regex seperator (patch from Mark Fowler)
         Switch distribution packaging back to ExtUtils::MakeMaker (RT#104876)
 
