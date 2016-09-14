@@ -161,7 +161,7 @@ C<demo.[a-c]> matches C<demo.a>, C<demo.b>, and C<demo.c>
 C<example.{foo,bar,baz}> matches C<example.foo>, C<example.bar>, and
 C<example.baz>
 
-=item leading . must be explictly matched
+=item leading . must be explicitly matched
 
 C<*.foo> does not match C<.bar.foo>.  For this you must either specify
 the leading . in the glob pattern (C<.*.foo>), or set
