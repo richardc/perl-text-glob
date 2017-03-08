@@ -1,3 +1,7 @@
+0.11    Wednesday 8th March, 2016
+        Regenerated tarball on a linux machine (0.10 was released from OSX
+        which added non-standard extended header attributes to the tar)
+
 0.10    Wednesday 14th September, 2016
         Added ability to alter regex seperator (patch from Mark Fowler)
         Switch distribution packaging back to ExtUtils::MakeMaker (RT#104876)

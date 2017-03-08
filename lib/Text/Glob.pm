@@ -3,7 +3,7 @@ use strict;
 use Exporter;
 use vars qw/$VERSION @ISA @EXPORT_OK
             $strict_leading_dot $strict_wildcard_slash/;
-$VERSION = '0.10';
+$VERSION = '0.11';
 @ISA = 'Exporter';
 @EXPORT_OK = qw( glob_to_regex glob_to_regex_string match_glob );
 
